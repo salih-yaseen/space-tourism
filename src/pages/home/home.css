@@ -1,0 +1,129 @@
+.home-container {
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 10vh;
+    background-image: url("../../assets/home/background-home-desktop.jpg");
+    background-size: cover;
+}
+
+.home-main {
+    width: 80%;
+    min-height: 70vh;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.home-content {
+    width: 40%;
+}
+
+.home-intro {
+    color: var(--secondary);
+}
+
+.explore {
+    width: 60%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.explore-btn {
+    width: 14rem;
+    height: 14rem;
+    font-size: 28px;
+    border: 0;
+    outline: 0;
+    border-radius: 50%;
+    background-color: var(--tertiary);
+    cursor: pointer;
+    position: relative;
+}
+.explore-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    transform: scale(0);
+    transition: all 400ms ease;
+}
+.explore-btn:hover::before {
+    transform: scale(1.5);
+}
+
+.home-head {
+    margin: 1.2rem 0;
+}
+
+@media screen and (max-width: 1035px) {
+    .home-content {
+        width: 50%;
+    }
+    .explore {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .home-container {
+        background-image: url("../../assets/home/background-home-tablet.jpg");
+        background-size: cover;
+    }
+
+    .home-head {
+        margin: 0.8rem 0;
+    }
+
+    .home-main {
+        width: 75%;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 4.5rem 0;
+    }
+
+    .home-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 0 0 4.4rem 0;
+    }
+
+    .explore {
+        margin-top: 1rem;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .home-head {
+        font-size: 80px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .home-head {
+        font-size: 70px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .home-container {
+        background-image: url("../../assets/home/background-home-mobile.jpg");
+        background-size: cover;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .head-main {
+        width: 100%;
+    }
+}

@@ -1,0 +1,244 @@
+.desti-container {
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 22vh;
+    background-image: url("../../assets/destination/background-destination-desktop.jpg");
+    background-size: cover;
+}
+
+.desti-main {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6vh;
+}
+
+.desti-intro-text {
+    width: 100%;
+    color: white;
+}
+.desti-intro-text > span {
+    color: var(--gray);
+    font-weight: bold;
+    margin-right: 0.7rem;
+}
+
+.desti-content {
+    display: flex;
+    gap: 10vw;
+    justify-content: center;
+}
+
+.desti-img {
+    width: 35%;
+}
+.desti-img img {
+    width: 90%;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10%);
+    animation: fadeOut 1s ease forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
+.desti-main-content {
+    width: 35%;
+}
+
+.destinations {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+    color: var(--secondary);
+    font-size: 16px;
+    font-weight: 200;
+}
+
+.desti-items {
+    position: relative;
+    padding: 0.8rem 0;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+}
+
+.desti-items::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--tertiary);
+    opacity: 0.5;
+    /* border-radius: 50px; */
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 300ms ease;
+}
+.desti-items:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.desti-items.activeDesti {
+    color: white;
+    font-weight: 300;
+}
+.desti-items.activeDesti::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--tertiary);
+    transform-origin: left;
+    border-radius: 50px;
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.currentDesti {
+    margin-bottom: 0.5rem;
+}
+
+.divider {
+    width: 100%;
+    height: 2px;
+    border-radius: 50px;
+    background-color: var(--gray);
+    opacity: 0.5;
+    margin: 2rem 1.3rem;
+}
+
+.travel-info {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.travel-info p {
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 1024px) {
+    .desti-content {
+        gap: 8vw;
+    }
+
+    .desti-img {
+        width: 40%;
+    }
+    .desti-main-content {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 970px) {
+    .desti-main {
+        padding-bottom: 10vh;
+    }
+
+    .desti-img {
+        width: 50%;
+    }
+    .desti-main-content {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .desti-container {
+        background-image: url("../../assets/destination/background-destination-tablet.jpg");
+        background-size: cover;
+    }
+
+    .desti-main {
+        width: 70%;
+    }
+
+    .desti-content {
+        flex-direction: column;
+    }
+
+    .desti-img {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 2rem 0;
+    }
+    .desti-img img {
+        width: 60%;
+    }
+    .destinations {
+        justify-content: center;
+    }
+    .desti-main-content {
+        width: 100%;
+        text-align: center;
+    }
+
+    .travel-info {
+        justify-content: center;
+    }
+
+    .currentDesti {
+        margin-bottom: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .desti-container {
+        padding-top: 15vh;
+    }
+
+    .desti-main {
+        width: 80%;
+    }
+
+    .desti-img {
+        margin: 1.5rem 0;
+    }
+
+    .desti-intro-text {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .desti-img img {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .desti-container {
+        background-image: url("../../assets/destination/background-destination-mobile.jpg");
+        background-size: cover;
+    }
+
+    .desti-main {
+        width: 90%;
+    }
+
+    .desti-intro-text {
+        font-size: 18px;
+    }
+
+    .desti-img {
+        margin: 1rem 0;
+    }
+
+    .travel-info {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
